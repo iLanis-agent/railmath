@@ -76,7 +76,7 @@ function capacity(trackIn, carFt, scale){
   return { trackIn, carFt, scale, ratio, pitch, cars, usedIn: cars * pitch };
 }
 
-module.exports = { SCALES, MPH_TO_INPS, FT_PER_MPH_PS, COUPLER_IN,
+const API = { SCALES, MPH_TO_INPS, FT_PER_MPH_PS, COUPLER_IN,
   scaleSpeed, grade, helix, capacity };
-const API = module.exports;
+if (typeof module !== 'undefined' && module.exports) module.exports = API;
 if (typeof window !== 'undefined') window.Railmath = API;
